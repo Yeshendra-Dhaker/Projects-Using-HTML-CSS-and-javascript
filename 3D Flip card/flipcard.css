@@ -1,0 +1,78 @@
+:root{
+    --level-one:translateZ(3rem);
+    --level-two:translateZ(6rem);
+    --level-three:translateZ(9rem);
+
+    --fw-normal:400;
+    --fw-bold:700;
+}
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+.contMaha{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    padding: 10px;
+}
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.card {
+    text-align: center;
+    position: relative;
+    padding: 5em;
+    
+    transition: transform 0.55s ease-in-out;
+    transform-style: preserve-3d;
+}
+.container1{
+    margin:10px;
+    width: 300px;
+    padding: 10px;
+    border: 5px solid black;
+}
+.container1:hover .card {
+    transform: rotateY(0.5turn);
+}
+.card_front,
+.card_back {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+padding: 2em;
+backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.card-front-desc{
+    transform: var(--level-two);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+}
+.card-back.title,.card-back-desc{
+    transform: translateZ(4rem);
+}
+.card-front-title{
+    font-size: 3rem;
+    transform: var(--level-three);
+    order: 2;
+    text-transform: uppercase;
+}
+.card_back{
+    transform: rotateY(.5turn);
+    background: lightgreen;
+}
+.card_front{
+    background: pink;
+    display: grid;
+}
+
